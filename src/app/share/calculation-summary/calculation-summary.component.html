@@ -1,0 +1,37 @@
+<table *ngIf="results">
+  <tr>
+    <th>Category</th>
+    <th>Term</th>
+    <th>Amortization Period</th>
+  </tr>
+  <tr>
+    <td>Number of Payments</td>
+    <td>{{ results.term.numberOfPayment }}</td>
+    <td>{{ results.amortization.numberOfPayment }}</td>
+  </tr>
+  <tr>
+    <td>Mortgage Payment</td>
+    <td>{{ results.term.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</td>
+    <td>{{ results.amortization.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</td>
+  </tr>
+  <tr>
+    <td>Prepayment</td>
+    <td>{{ results.term.prepayment | currency:'CAD':'symbol':'4.2-2' }}</td>
+    <td>{{ results.amortization.prepayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+  </tr>
+  <tr>
+    <td>Principal Payments</td>
+    <td>{{ results.term.principalPayment | currency:'CAD':'symbol':'4.2-2' }}</td>
+    <td>{{ results.amortization.principalPayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+  </tr>
+  <tr>
+    <td>Interest Payments</td>
+    <td>{{ results.term.interestPayment | currency:'CAD':'symbol':'4.2-2' }}</td>
+    <td>{{ results.amortization.interestPayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+  </tr>
+  <tr>
+    <td>Total Cost</td>
+    <td>{{ results.term.totalAmount | currency:'CAD':'symbol':'4.2-2'}}</td>
+    <td>{{ results.amortization.totalAmount | currency:'CAD':'symbol':'4.2-2'}}</td>
+  </tr>
+</table>

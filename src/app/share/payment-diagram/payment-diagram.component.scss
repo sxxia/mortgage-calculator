@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+
+  .areachart,
+  .barchart {
+    width: 40%;
+  }
+}

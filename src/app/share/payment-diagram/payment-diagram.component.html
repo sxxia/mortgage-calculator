@@ -1,0 +1,62 @@
+<div *ngIf="results" class="container">
+  <div class="areachart">
+    <dx-chart [dataSource]="areaChart">
+      <dxo-title text="Payment History">
+        <dxo-font size="20"></dxo-font>
+      </dxo-title>
+
+      <dxi-series 
+        argumentField="numberOfPayment" 
+        valueField="remindedAmount" 
+        name="Regular Payments" 
+        type="area" 
+        color="#00a9ef">
+      </dxi-series>
+
+      <dxo-size [width]="680"></dxo-size>
+  
+      <dxo-argument-axis>
+        <dxo-title text="Number of Payments">
+          <dxo-font size="12"></dxo-font>
+        </dxo-title>
+      </dxo-argument-axis>
+  
+      <dxi-value-axis [visualRange]="{startValue:null, endValue: mortgageAmount*1.2}">
+        <dxi-constant-line 
+          [width]="2" 
+          [value]="mortgageAmount" 
+          color="#000" 
+          dashStyle="dash">
+          <dxo-label text="Mortgage Amount"></dxo-label>
+        </dxi-constant-line>
+      </dxi-value-axis>
+    </dx-chart>
+  </div>
+
+  <div class="barchart">
+    <dx-chart [dataSource]="barChart">
+      <dxi-series valueField="principalPayment" name="Principal Payment"></dxi-series>
+      <dxi-series valueField="interestPayment" name="Interest Payment"></dxi-series>
+        <dxo-common-series-settings
+          argumentField="payments"
+          type="stackedBar">
+        </dxo-common-series-settings>
+
+        <dxo-title text="Interest Payment">
+          <dxo-font size="20"></dxo-font>
+        </dxo-title>
+
+        <dxo-size [width]="680"></dxo-size>
+        
+        <dxi-value-axis>
+          <dxi-constant-line 
+            [width]="2" 
+            [value]="mortgageAmount" 
+            color="#000" 
+            dashStyle="dash">
+            <dxo-label text="Mortgage Amount"></dxo-label>
+          </dxi-constant-line>
+        </dxi-value-axis>
+    </dx-chart>
+  </div>
+</div>

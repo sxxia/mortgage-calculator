@@ -1,0 +1,9 @@
+*.md
+*.js
+*.html
+*.json
+node_modules
+.idea
+dist
+.vscode
+tools
