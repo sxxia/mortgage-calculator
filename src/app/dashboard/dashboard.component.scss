@@ -1,12 +1,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: stretch;
+  justify-content: flex-start;
   padding: 0 40px;
   height: 820px;
 
   .input {
+    margin-bottom: 30px;
+
     &__payment {
       display: flex;
       flex-wrap: wrap;

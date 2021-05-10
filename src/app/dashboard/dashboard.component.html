@@ -97,6 +97,16 @@
   </mat-card>
 
   <mat-card *ngIf="results" class="output">
-    output
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Calculation Summary">
+        Calculation Summary
+      </mat-tab>
+      <mat-tab label="Mortgage Summary">
+        Mortgage Summary
+      </mat-tab>
+      <mat-tab label="Payment Diagram">
+        Payment Diagram
+      </mat-tab>
+    </mat-tab-group>
   </mat-card>
 </div>
