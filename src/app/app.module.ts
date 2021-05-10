@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShareModule } from './share/share.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent],
@@ -14,6 +15,7 @@ import { ShareModule } from './share/share.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ShareModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
