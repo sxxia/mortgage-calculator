@@ -1,5 +1,5 @@
 <div *ngIf="results" class="container">
-  <div class="areachart" #areaChartContainer>
+  <div class="areachart">
     <dx-chart [dataSource]="areaChart">
       <dxo-title text="Payment History">
         <dxo-font size="20"></dxo-font>
@@ -13,9 +13,7 @@
         color="#00a9ef">
       </dxi-series>
 
-      <dxo-size
-        [width]="areaChartContainer.clientWidth">
-      </dxo-size>
+      <dxo-size [width]="680"></dxo-size>
   
       <dxo-argument-axis>
         <dxo-title text="Number of Payments">
@@ -35,7 +33,7 @@
     </dx-chart>
   </div>
 
-  <div class="barchart" #barChartContainer>
+  <div class="barchart">
     <dx-chart [dataSource]="barChart">
       <dxi-series valueField="principalPayment" name="Principal Payment"></dxi-series>
       <dxi-series valueField="interestPayment" name="Interest Payment"></dxi-series>
@@ -48,7 +46,7 @@
           <dxo-font size="20"></dxo-font>
         </dxo-title>
 
-        <dxo-size [width]="barChartContainer.clientWidth"></dxo-size>
+        <dxo-size [width]="680"></dxo-size>
         
         <dxi-value-axis>
           <dxi-constant-line 
