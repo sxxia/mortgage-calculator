@@ -4,15 +4,21 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 import { CalculationSummaryComponent } from './calculation-summary/calculation-summary.component';
 import { MortgageSummaryComponent } from './mortgage-summary/mortgage-summary.component';
 import { DevExtremeModule } from './dev-extreme/dev-extreme.module';
+import { PaymentDiagramComponent } from './payment-diagram/payment-diagram.component';
 
 @NgModule({
-  declarations: [CalculationSummaryComponent, MortgageSummaryComponent],
+  declarations: [
+    CalculationSummaryComponent,
+    MortgageSummaryComponent,
+    PaymentDiagramComponent,
+  ],
   imports: [CommonModule, AngularMaterialModule, DevExtremeModule],
   exports: [
     AngularMaterialModule,
     CalculationSummaryComponent,
     MortgageSummaryComponent,
     DevExtremeModule,
+    PaymentDiagramComponent,
   ],
 })
 export class ShareModule {
