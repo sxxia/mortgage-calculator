@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DashboardForm } from '../entities';
 
 @Injectable({
   providedIn: 'root',
@@ -6,7 +7,12 @@ import { Injectable } from '@angular/core';
 export class MortgageCalculationService {
   constructor() {}
 
-  getAllResults(value: any): any {
+  getAllResults(value: DashboardForm): {
+    monthlyAmount: number;
+    totalAmount: number;
+    totalAmountByTerm: number;
+    accInterestByTerm: number;
+  } {
     let monthlyAmount: number;
     let totalAmount: number;
     let totalAmountByTerm: number;
