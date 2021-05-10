@@ -1,24 +1,30 @@
 <div class="container">
   <mat-card class="input">
-    <form [formGroup]="dashboardForm" (ngSubmit)="onCalculate(dashboardForm.value)">
+    <form 
+      [formGroup]="dashboardForm" 
+      (ngSubmit)="onCalculate(dashboardForm.value)">
       <h2>Payment Plan</h2>
-      <div class="input__payment" formGroupName="paymentPlan">
+
+      <div 
+        formGroupName="paymentPlan"
+        class="input__payment">
+
         <mat-form-field>
           <mat-label>Mortgage Amount (CAD)</mat-label>
           <input 
-            type="number" 
-            matInput
-            formControlName="mortgageAmount">
+            matInput 
+            formControlName="mortgageAmount" 
+            type="number">
         </mat-form-field>
-  
+
         <mat-form-field>
           <mat-label>Interest Rate (%)</mat-label>
           <input 
-            type="number" 
-            matInput
-            formControlName="interestRate">
+            matInput 
+            formControlName="interestRate" 
+            type="number">
         </mat-form-field>
-  
+
         <mat-form-field>
           <mat-label>Amortization Period</mat-label>
           <mat-select formControlName="amortizationPeriod">
@@ -26,15 +32,15 @@
             <mat-option [value]="30">30 Years</mat-option>
           </mat-select>
         </mat-form-field>
-  
+
         <mat-form-field>
           <mat-label>Payment Frequency</mat-label>
-          <mat-select formControlName="paymentFrenquency">
+          <mat-select formControlName="paymentFrequency">
             <mat-option [value]="24">Semi-monthly (24x per year)</mat-option>
             <mat-option [value]="12">Monthly (12x per year)</mat-option>
           </mat-select>
         </mat-form-field>
-  
+
         <mat-form-field>
           <mat-label>Term</mat-label>
           <mat-select formControlName="term">
@@ -44,19 +50,22 @@
             <mat-option [value]="4">4 Years</mat-option>
             <mat-option [value]="5">5 Years</mat-option>
             <mat-option [value]="6">6 Years</mat-option>
+
           </mat-select>
         </mat-form-field>
       </div>
 
       <h2>Prepayment Plan</h2>
 
-      <div class="input__prepayment" formGroupName="prepaymentPlan">
+      <div 
+        formGroupName="prepaymentPlan" 
+        class="input__prepayment">
         <mat-form-field>
           <mat-label>Prepayment Amount (CAD)</mat-label>
           <input 
             matInput 
-            type="number"
-            formControlName="prepaymentAmount">
+            formControlName="prepaymentAmount" 
+            type="number">
         </mat-form-field>
 
         <mat-form-field>
@@ -71,23 +80,23 @@
           <mat-label>Start With Payment</mat-label>
           <input 
             matInput 
-            type="number"
-            formControlName="startWithPayment">
+            formControlName="startWithPayment" 
+            type="number">
         </mat-form-field>
       </div>
 
       <button 
         mat-raised-button 
         color="primary" 
-        type="submit" 
-        class="button"
-        [disabled]="dashboardForm.invalid">
+        [disabled]="dashboardForm.invalid" 
+        type="submit"
+        class="button">
           Calculate
       </button>
     </form>
   </mat-card>
 
-  <mat-card class="output">
+  <mat-card *ngIf="results" class="output">
     output
   </mat-card>
 </div>
