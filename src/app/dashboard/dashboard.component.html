@@ -80,7 +80,8 @@
         mat-raised-button 
         color="primary" 
         type="submit" 
-        class="button">
+        class="button"
+        [disabled]="dashboardForm.invalid">
           Calculate
       </button>
     </form>
