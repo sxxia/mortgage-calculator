@@ -37,9 +37,12 @@ export class DashboardComponent implements OnInit {
         term: [4, Validators.required],
       }),
       prepaymentPlan: this.fb.group({
-        prepaymentAmount: [0, Validators.required],
-        prepaymentFrequency: ['oneTime', Validators.required],
-        startWithPayment: [1, Validators.required],
+        prepaymentAmount: [{ value: 0, disabled: true }, Validators.required],
+        prepaymentFrequency: [
+          { value: 'oneTime', disabled: true },
+          Validators.required,
+        ],
+        startWithPayment: [{ value: 1, disabled: true }, Validators.required],
       }),
     });
   }
