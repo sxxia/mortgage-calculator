@@ -9,6 +9,7 @@ import { MortgageCalculationService } from '../service/mortgage-calculation.serv
 })
 export class DashboardComponent implements OnInit {
   results: any;
+  frequency: number;
   dashboardForm: FormGroup;
 
   constructor(
@@ -20,11 +21,32 @@ export class DashboardComponent implements OnInit {
     this.initForm();
   }
 
-  onCalculate(value: any): any {
-    console.log(value);
+  onCalculate(value: any): void {
+    const paymentPlan = value.paymentPlan;
+    const res = this.mortgageCalculationService.getAllResults(value);
 
-    this.results = this.mortgageCalculationService.getAllResults(value);
-    console.log('results', this.results);
+    this.frequency = paymentPlan.paymentFrequency;
+
+    if (res) {
+      this.results = {
+        amortization: {
+          numberOfPayment: paymentPlan.amortizationPeriod * this.frequency,
+          monthlyAmount: res.monthlyAmount,
+          prepayment: 0,
+          principalPayment: paymentPlan.mortgageAmount,
+          interestPayment: res.totalAmount - paymentPlan.mortgageAmount,
+          totalAmount: res.totalAmount,
+        },
+        term: {
+          numberOfPayment: paymentPlan.term * this.frequency,
+          monthlyAmount: res.monthlyAmount,
+          prepayment: 0,
+          principalPayment: res.totalAmountByTerm - res.accInterestByTerm,
+          interestPayment: res.accInterestByTerm,
+          totalAmount: res.totalAmountByTerm,
+        },
+      };
+    }
   }
 
   private initForm(): void {
