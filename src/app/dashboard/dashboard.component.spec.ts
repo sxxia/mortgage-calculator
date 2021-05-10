@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { MortgageCalculationService } from '../service/mortgage-calculation.service';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -8,9 +10,9 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
-    })
-    .compileComponents();
+      declarations: [DashboardComponent],
+      providers: [FormBuilder, MortgageCalculationService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
