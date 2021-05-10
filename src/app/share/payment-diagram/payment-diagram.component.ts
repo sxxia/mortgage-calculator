@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Results } from 'src/app/entities';
 
 @Component({
   selector: 'app-payment-diagram',
@@ -6,9 +7,9 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   styleUrls: ['./payment-diagram.component.scss'],
 })
 export class PaymentDiagramComponent implements OnInit, OnChanges {
-  @Input() results: any;
-  areaChart: any;
-  barChart: any;
+  @Input() results: Results;
+  areaChart: { [key: string]: number }[];
+  barChart: { [key: string]: number | string }[];
   mortgageAmount: number;
 
   constructor() {}
@@ -19,6 +20,7 @@ export class PaymentDiagramComponent implements OnInit, OnChanges {
     if (this.results) {
       this.mortgageAmount = this.results.amortization.principalPayment;
 
+      // TODO: need formula to calculate each point, mock Here
       this.areaChart = [
         {
           numberOfPayment: 0,

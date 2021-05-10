@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Results, DashboardForm } from '../entities';
 import { MortgageCalculationService } from '../service/mortgage-calculation.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MortgageCalculationService } from '../service/mortgage-calculation.serv
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  results: any;
+  results: Results;
   frequency: number;
   dashboardForm: FormGroup;
 
@@ -21,7 +22,7 @@ export class DashboardComponent implements OnInit {
     this.initForm();
   }
 
-  onCalculate(value: any): void {
+  onCalculate(value: DashboardForm): void {
     const paymentPlan = value.paymentPlan;
     const res = this.mortgageCalculationService.getAllResults(value);
 

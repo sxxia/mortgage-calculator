@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Results } from 'src/app/entities';
 
 @Component({
   selector: 'app-calculation-summary',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./calculation-summary.component.scss'],
 })
 export class CalculationSummaryComponent implements OnInit {
-  @Input() results: any;
+  @Input() results: Results;
 
   constructor() {}
 
