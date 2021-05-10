@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { DashboardForm } from '../entities';
 
+import { DashboardForm } from '../entities';
 import { MortgageCalculationService } from './mortgage-calculation.service';
 
 describe('MortgageCalculationService', () => {

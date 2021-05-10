@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+
 import { Results } from 'src/app/entities';
 
 @Component({
