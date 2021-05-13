@@ -1,43 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  DxButtonModule,
-  DxChartModule,
-  DxCheckBoxModule,
-  DxCircularGaugeModule,
-  DxDataGridModule,
-  DxTooltipModule,
-} from 'devextreme-angular';
-import {
-  DxoDataSourceModule,
-  DxoValueAxisModule,
-} from 'devextreme-angular/ui/nested';
+import { DxChartModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    DxDataGridModule,
-    DxChartModule,
-    DxoValueAxisModule,
-    DxoDataSourceModule,
-    DxDataGridModule,
-    DxTooltipModule,
-    DxCheckBoxModule,
-    DxButtonModule,
-    DxCircularGaugeModule,
-  ],
-  exports: [
-    CommonModule,
-    DxDataGridModule,
-    DxChartModule,
-    DxoValueAxisModule,
-    DxoDataSourceModule,
-    DxDataGridModule,
-    DxTooltipModule,
-    DxCheckBoxModule,
-    DxButtonModule,
-    DxCircularGaugeModule,
-  ],
+  imports: [CommonModule, DxChartModule],
+  exports: [CommonModule, DxChartModule],
 })
 export class DevExtremeModule {}

@@ -11,27 +11,27 @@
   </tr>
   <tr>
     <td>Mortgage Payment</td>
-    <td>{{ results.term.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</td>
-    <td>{{ results.amortization.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</td>
+    <td>{{ results.term.monthlyAmount | currency:'CAD':'symbol' }}</td>
+    <td>{{ results.amortization.monthlyAmount | currency:'CAD':'symbol' }}</td>
   </tr>
   <tr>
     <td>Prepayment</td>
-    <td>{{ results.term.prepayment | currency:'CAD':'symbol':'4.2-2' }}</td>
-    <td>{{ results.amortization.prepayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+    <td>{{ results.term.prepayment | currency:'CAD':'symbol' }}</td>
+    <td>{{ results.amortization.prepayment | currency:'CAD':'symbol' }}</td>
   </tr>
   <tr>
     <td>Principal Payments</td>
-    <td>{{ results.term.principalPayment | currency:'CAD':'symbol':'4.2-2' }}</td>
-    <td>{{ results.amortization.principalPayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+    <td>{{ results.term.principalPayment | currency:'CAD':'symbol' }}</td>
+    <td>{{ results.amortization.principalPayment | currency:'CAD':'symbol' }}</td>
   </tr>
   <tr>
     <td>Interest Payments</td>
-    <td>{{ results.term.interestPayment | currency:'CAD':'symbol':'4.2-2' }}</td>
-    <td>{{ results.amortization.interestPayment | currency:'CAD':'symbol':'4.2-2'}}</td>
+    <td>{{ results.term.interestPayment | currency:'CAD':'symbol' }}</td>
+    <td>{{ results.amortization.interestPayment | currency:'CAD':'symbol' }}</td>
   </tr>
   <tr>
     <td>Total Cost</td>
-    <td>{{ results.term.totalAmount | currency:'CAD':'symbol':'4.2-2'}}</td>
-    <td>{{ results.amortization.totalAmount | currency:'CAD':'symbol':'4.2-2'}}</td>
+    <td>{{ results.term.totalAmount | currency:'CAD':'symbol' }}</td>
+    <td>{{ results.amortization.totalAmount | currency:'CAD':'symbol' }}</td>
   </tr>
 </table>

@@ -4,11 +4,11 @@
     <li>have made <strong>{{ results.amortization.numberOfPayment }}</strong>
       <span *ngIf="frequency === 12"> monthly</span> <span *ngIf="frequency===24">
         semi-monthly</span> ({{ frequency }}x per year) payments of <strong>
-        {{ results.amortization.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</strong>.
+        {{ results.amortization.monthlyAmount | currency:'CAD':'symbol' }}</strong>.
     </li>
-    <li>have paid <strong>{{ results.amortization.principalPayment | currency:'CAD':'symbol':'4.2-2' }}</strong>
-      in principal, <strong>{{ results.amortization.interestPayment | currency:'CAD':'symbol':'4.2-2'}}</strong>
-      in interest, for a total of <strong>{{ results.amortization.totalAmount | currency:'CAD':'symbol':'4.2-2'}}
+    <li>have paid <strong>{{ results.amortization.principalPayment | currency:'CAD':'symbol' }}</strong>
+      in principal, <strong>{{ results.amortization.interestPayment | currency:'CAD':'symbol' }}</strong>
+      in interest, for a total of <strong>{{ results.amortization.totalAmount | currency:'CAD':'symbol' }}
       </strong>.</li>
   </ul>
 
@@ -16,18 +16,18 @@
   <ul>
     <li>have made <strong>{{ results.term.numberOfPayment }}</strong> <span *ngIf="frequency === 12"> monthly</span>
       <span *ngIf="frequency===24"> semi-monthly</span> ({{ frequency }}x per year) payments of <strong>
-        {{ results.term.monthlyAmount | currency:'CAD':'symbol':'4.2-2' }}</strong>.
+        {{ results.term.monthlyAmount | currency:'CAD':'symbol' }}</strong>.
     </li>
-    <li>have paid <strong>{{ results.term.principalPayment | currency:'CAD':'symbol':'4.2-2' }}</strong>
-      in principal, <strong>{{ results.term.interestPayment | currency:'CAD':'symbol':'4.2-2' }}</strong> 
-      in interest, for a total of <strong>{{ results.term.totalAmount | currency:'CAD':'symbol':'4.2-2'}}
+    <li>have paid <strong>{{ results.term.principalPayment | currency:'CAD':'symbol' }}</strong>
+      in principal, <strong>{{ results.term.interestPayment | currency:'CAD':'symbol' }}</strong> 
+      in interest, for a total of <strong>{{ results.term.totalAmount | currency:'CAD':'symbol' }}
       </strong>.</li>
   </ul>
 
   <p> At the end of your {{ results.term.numberOfPayment / frequency }}-year term, you will: </p>
   <ul>
     <li>have a balance of <strong>
-        {{ results.amortization.principalPayment - results.term.principalPayment | currency:'CAD':'symbol':'4.2-2'}}
+        {{ results.amortization.principalPayment - results.term.principalPayment | currency:'CAD':'symbol' }}
       </strong>.</li>
   </ul>
 </div>
