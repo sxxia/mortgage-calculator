@@ -54,19 +54,25 @@ export class DashboardComponent implements OnInit {
   private initForm(): void {
     this.dashboardForm = this.fb.group({
       paymentPlan: this.fb.group({
-        mortgageAmount: [300000, Validators.required],
-        interestRate: [5, Validators.required],
+        mortgageAmount: [300000, [Validators.required, Validators.min(0.0001)]],
+        interestRate: [5, [Validators.required, Validators.min(0.0001)]],
         amortizationPeriod: [30, Validators.required],
         paymentFrequency: [12, Validators.required],
         term: [4, Validators.required],
       }),
       prepaymentPlan: this.fb.group({
-        prepaymentAmount: [{ value: 0, disabled: true }, Validators.required],
+        prepaymentAmount: [
+          { value: 0, disabled: true },
+          [Validators.required, Validators.min(0.0001)],
+        ],
         prepaymentFrequency: [
           { value: 'oneTime', disabled: true },
           Validators.required,
         ],
-        startWithPayment: [{ value: 1, disabled: true }, Validators.required],
+        startWithPayment: [
+          { value: 1, disabled: true },
+          [Validators.required, Validators.min(0.0001)],
+        ],
       }),
     });
   }
